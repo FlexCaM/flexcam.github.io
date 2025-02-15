@@ -44,27 +44,34 @@
     <style>
       card-table {
         width: 100%;
-        border-collapse: separate; /* 允许单元格之间分开，这样圆角不会被遮挡 */
-        border-spacing: 10px; /* 单元格之间的间距 */
+        border-collapse: separate;
+        /* 允许单元格之间分开，这样圆角不会被遮挡 */
+        border-spacing: 10px;
+        /* 单元格之间的间距 */
       }
+
       .card {
         border: 1px solid #ddd;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         background: #fff;
-        height: 350px; /* 固定高度，根据需要调整 */
+        height: 350px;
+        /* 固定高度，根据需要调整 */
         display: flex;
         flex-direction: column;
       }
+
       .card video {
         width: 100%;
         display: block;
       }
+
       .card-content {
         padding: 10px;
         flex: 1;
       }
+
       .card-content p {
         text-align: justify;
         margin: 0 0 10px;
@@ -675,31 +682,86 @@
               <table
                 align="top"
                 class="card-table is-centered is-bordered is-striped is-narrow"
-                style="border: none;"
+                style="border: none"
               >
                 <tbody>
                   <tr>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">Original image</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        Original image
+                      </p>
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">CogVideoX</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        CogVideoX
+                      </p>
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">Runway</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        Runway
+                      </p>
                     </td>
-                    <td style="width: 23%; vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">Tongyi</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        Tongyi
+                      </p>
+                    </td>
+                    <td style="width: 16%; vertical-align: top" colspan="3">
+                      <p class="title is-6" style="text-align: center">
+                        FlexCaM
+                      </p>
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 12%; border-right-width: 1px;vertical-align: top" colspan="4">
+                    <td
+                      style="
+                        width: 12%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
                       <img
                         style="text-align: center; height: 128px; width: auto"
                         src="resources/pandas/panda-ori.jpg"
                       />
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: middle" colspan="4">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
                       <video controls style="height: 128px; width: auto">
                         <source
                           src="resources/pandas/CogVideo.mp4"
@@ -708,7 +770,14 @@
                         Your browser does not support the video element.
                       </video>
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: middle" colspan="4">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
                       <video controls style="height: 128px; width: auto">
                         <source
                           src="resources/pandas/Runway.mp4"
@@ -717,7 +786,14 @@
                         Your browser does not support the video element.
                       </video>
                     </td>
-                    <td style="width: 23%; vertical-align: middle" colspan="4">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
                       <video controls style="height: 128px; width: auto">
                         <source
                           src="resources/pandas/Tongyi.mp4"
@@ -726,41 +802,107 @@
                         Your browser does not support the video element.
                       </video>
                     </td>
+                    <td style="width: 16%; vertical-align: middle" colspan="3">
+                      <video controls style="height: 128px; width: auto">
+                        <source
+                          src="resources/trace&image/out.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="card is-centered has-text-centered" style="height: 210px;margin-top: 0.5rem;">
+          <div
+            class="card is-centered has-text-centered"
+            style="height: 175px; margin-top: 0.5rem"
+          >
             <div class="card-content">
               <table
                 align="top"
                 class="card-table is-centered is-bordered is-striped is-narrow"
-                style="border: none;"
+                style="border: none"
               >
                 <tbody>
                   <tr>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">Original image</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        Original image
+                      </p>
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">CameraCtrl</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        CameraCtrl
+                      </p>
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">MotionMaster</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        MotionMaster
+                      </p>
                     </td>
-                    <td style="width: 23%; vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center;">Hunyuan</p>
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: top;
+                      "
+                      colspan="3"
+                    >
+                      <p class="title is-6" style="text-align: center">
+                        Hunyuan
+                      </p>
+                    </td>
+                    <td style="width: 16%; vertical-align: top" colspan="3">
+                      <p class="title is-6" style="text-align: center">
+                        FlexCaM
+                      </p>
                     </td>
                   </tr>
                   <tr>
-                    <td style="width: 12%; border-right-width: 1px;vertical-align: middle" colspan="4">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
                       <img
-                        style="text-align: center; height: 122px; width: auto"
+                        style="text-align: center; height: 93px; width: auto"
                         src="resources/other_methods/ori.png"
                       />
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;vertical-align: middle" colspan="4">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
                       <video controls style="width: auto">
                         <source
                           src="resources/other_methods/CameraCtrl.mp4"
@@ -769,8 +911,19 @@
                         Your browser does not support the video element.
                       </video>
                     </td>
-                    <td style="width: 23%; border-right-width: 1px;text-align: center; vertical-align: middle" colspan="4">
-                      <video controls style="height: 122px; width: auto;margin: auto;">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        text-align: center;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
+                      <video
+                        controls
+                        style="height: 93px; width: auto; margin: auto"
+                      >
                         <source
                           src="resources/other_methods/CTl2.mp4"
                           type="video/mp4"
@@ -778,12 +931,26 @@
                         Your browser does not support the video element.
                       </video>
                     </td>
-                    <td style="width: 23%; vertical-align: middle" colspan="4">
+                    <td
+                      style="
+                        width: 16%;
+                        border-right-width: 1px;
+                        text-align: center;
+                        vertical-align: middle;
+                      "
+                      colspan="3"
+                    >
                       <video controls style="width: auto">
                         <source
                           src="resources/other_methods/hunyuan.mp4"
                           type="video/mp4"
                         />
+                        Your browser does not support the video element.
+                      </video>
+                    </td>
+                    <td style="width: 16%; vertical-align: middle" colspan="3">
+                      <video controls style="height: 93px; width: auto">
+                        <source src="resources/TTI/8th.mp4" type="video/mp4" />
                         Your browser does not support the video element.
                       </video>
                     </td>
