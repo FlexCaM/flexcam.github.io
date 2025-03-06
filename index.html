@@ -1,18 +1,8 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="FlexCaM" />
-    <meta property="og:title" content="FlexCaM" />
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
-
-    <title>FlexCaM</title>
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CameraCtrl</title>
+    <link href="./CameraCtrl_files/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="static/css/bulma.min.css" />
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
     <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
@@ -22,25 +12,11 @@
       href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
     />
     <link rel="stylesheet" href="static/css/index.css" />
-    <link rel="stylesheet" href="static/css/audio-table.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="static/css/dropdown_style.css"
-    />
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      type="text/javascript"
+      src="./CameraCtrl_files/jquery.mlens-1.0.min.js"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-    <script defer src="static/js/fontawesome.all.min.js"></script>
-    <script src="static/js/bulma-carousel.min.js"></script>
-    <script src="static/js/bulma-slider.min.js"></script>
-    <script src="static/js/index.js"></script>
+    <script type="text/javascript" src="./CameraCtrl_files/jquery.js"></script>
     <style>
       card-table {
         width: 100%;
@@ -80,886 +56,813 @@
   </head>
 
   <body>
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1
-                id="co-speech-modalities"
-                class="title is-1 publication-title"
-              >
-                FlexCaM
-              </h1>
-              <!-- <h1 class="title is-1 publication-title">with Self-Supervised Speech Discrete Units</h1> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="content">
+      <h1><strong>OmniCam</strong></h1>
+    </div>
 
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                Camera motion refers to the process of altering the position and
-                orientation of a camera in order to achieve diverse visual
-                effects, which holds significant potential for application in
-                the field of video creation. However, existing methods suffer
-                from several limitations. They lack flexible control
-                capabilities, only allowing movement in limited directions.
-                Additionally, their interaction mechanisms are often complex,
-                and they exhibit significant limitations in handling long
-                sequence control tasks. To address these issues, we propose
-                FlexCaM, which leverages large language models and video
-                diffusion models to achieve powerful and versatile
-                functionalities. It supports fine-grained temporal control,
-                enables composite motion in arbitrary directions, facilitates
-                camera zooming, allows for designing camera motion effects, and
-                ensures seamless integration of multiple operations.
-                Additionally, our model supports multimodal inputs, which are
-                divided into trajectory references and content references.
-                Trajectory references are controlled through text or video,
-                while content references are provided via images or video. To
-                support further training of the FlexCaM model, we propose the
-                FlexTr dataset, which contains a large number of high-quality
-                long-sequence trajectories, videos, and corresponding
-                descriptions. Experimental results demonstrate that our model
-                achieves state-of-the-art (SOTA) performance in terms of both
-                functionality and effectiveness.
-              </p>
-            </div>
-          </div>
-        </div>
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        Abstract
+      </p>
+      <p style="font-size: 1.2em" class="serif">
+        Camera motion refers to the process of altering the position and
+        orientation of a camera in order to achieve diverse visual effects,
+        which holds significant potential for application in the field of video
+        creation. However, existing methods suffer from several limitations.
+        They lack flexible control capabilities, only allowing movement in
+        limited directions. Additionally, their interaction mechanisms are often
+        complex, and they exhibit significant limitations in handling long
+        sequence control tasks. To address these issues, we propose OmniCam,
+        which leverages large language models and video diffusion models to
+        achieve powerful and versatile functionalities. It supports fine-grained
+        temporal control, enables composite motion in arbitrary directions,
+        facilitates camera zooming, allows for designing camera motion effects,
+        and ensures seamless integration of multiple operations. Additionally,
+        our model supports multimodal inputs, which are divided into trajectory
+        references and content references. Trajectory references are controlled
+        through text or video, while content references are provided via images
+        or video. To support further training of the OmniCam model, we propose
+        the FlexTr dataset, which contains a large number of high-quality
+        long-sequence trajectories, videos, and corresponding descriptions.
+        Experimental results demonstrate that our model achieves
+        state-of-the-art (SOTA) performance in terms of both functionality and
+        effectiveness.
+      </p>
+    </div>
+
+    <div class="content">
+      <div style="text-align: center">
+        <img src="resources/ConTra.png" width="95%" />
       </div>
-    </section>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- 2. -->
-        <div
-          class="content is-centered has-text-centered"
-          style="display: block"
+    </div>
+
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        Demo
+      </p>
+      <!-- <div style="text-align: center; margin-bottom: 1em">
+        <video class="clickplay" width="80%" controls>
+          <source src="./CameraCtrl_files/Demo_video.mp4" type="video/mp4" />
+        </video>
+      </div> -->
+      <div style="text-align: center">
+        <img src="resources/uiux.png" style="width: 80%;height: auto;" />
+      </div>
+      <p style="font-size: 1.2em" class="serif">
+        We have created an interactive interface, as shown in the figure, which
+        displays some of the functions.
+      </p>
+    </div>
+    <!-- 2. -->
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        Examples of Different Trajectory of OmniCam:
+        <span style="color: #be9000;">Text(Trajectory)</span>+Image(Content)
+      </p>
+      <div>
+        <table
+          align="center"
+          style="
+            text-align: center;
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+          "
         >
-          <h3 class="title is-4">
-            Examples of Different Trajectory of FlexCaM:
-            Text(Trajectory)+Image(Content)
-          </h3>
-          <div>
-            <table
-              align="top"
-              class="card-table is-centered is-bordered is-striped is-narrow"
-              style="border: none"
+          <tbody>
+            <tr>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/1st.mp4" type="video/mp4" />
+                    f525304c94e7b061a16de4abbba5907f Your browser does not
+                    support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      First, the camera moves quickly downward. 1 to 2 seconds,
+                      it slowly pans to the right. Immediately after, the camera
+                      swiftly moves upward-right at a 30-degree angle. 3 to 4
+                      seconds, it slowly pulls back.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/2nd.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      The camera first moves quickly upward. 3 to 4 seconds, it
+                      slowly pans to the left.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/3rd.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      0 to 1 second, the camera steadily moves downward at a
+                      fast speed. 1 to 2 seconds, it slowly pans to the left. 2
+                      to 3 seconds, it rapidly pushes forward.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/4th.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      During the first 2 seconds, the camera slowly rises
+                      upward. Then, from 2 to 3 seconds, it quickly pushes
+                      downward, highlighting an important detail in the frame.
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/5th.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      From 2 to 3 seconds, the camera gently descends, gradually
+                      revealing a lower part of the scene.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/6th.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      Between 0 and 1 second, the camera gently moves
+                      upward-right at about a 45-degree angle. Afterward, it
+                      swiftly pulls back, gradually expanding the view. Finally,
+                      from 2 to 3 seconds, it continues to gently move forward.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/7th.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      From 0 to 1.3 seconds, the camera rises steadily,
+                      showcasing the distant view. From 1.3 to 2 seconds, it
+                      slowly turns to the left. From 2 to 3 seconds, it rapidly
+                      slides to the right, transitioning the image.
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <div class="card">
+                  <video controls autoplay muted loop style="width: 100%">
+                    <source src="resources/TTI/8th.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                  </video>
+                  <div class="card-content">
+                    <p style="font-size: 14px; margin:0; line-height:1.5;" class="serif">
+                      From 0 to 1 second, the camera quickly moves forward.
+                      Then, it slowly rotates counterclockwise. After that, from
+                      1.5 to 2.5 seconds, the camera quickly slides right and
+                      upward at a 45-degree angle.
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- 5. -->
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        Examples of Different Image of OmniCam: <span style="color: #be9000;">Text(Trajectory)</span>+Image(Content)
+      </p>
+      <br />
+      <table
+        align="top"
+        class="card-table is-centered is-bordered is-striped is-narrow"
+        style="border: none"
+      >
+        <tbody>
+          <tr>
+            <td
+              style="width: 23%; vertical-align: top; border-right-width: 1px"
+              colspan="4"
             >
-              <tbody>
-                <tr>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/1st.mp4" type="video/mp4" />
-                        f525304c94e7b061a16de4abbba5907f Your browser does not
-                        support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          First, the camera moves quickly downward. 1 to 2
-                          seconds, it slowly pans to the right. Immediately
-                          after, the camera swiftly moves upward-right at a
-                          30-degree angle. 3 to 4 seconds, it slowly pulls back.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/2nd.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          The camera first moves quickly upward. 3 to 4 seconds,
-                          it slowly pans to the left.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/3rd.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          0 to 1 second, the camera steadily moves downward at a
-                          fast speed. 1 to 2 seconds, it slowly pans to the
-                          left. 2 to 3 seconds, it rapidly pushes forward.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/4th.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          During the first 2 seconds, the camera slowly rises
-                          upward. Then, from 2 to 3 seconds, it quickly pushes
-                          downward, highlighting an important detail in the
-                          frame.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/5th.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          From 2 to 3 seconds, the camera gently descends,
-                          gradually revealing a lower part of the scene.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/6th.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          Between 0 and 1 second, the camera gently moves
-                          upward-right at about a 45-degree angle. Afterward, it
-                          swiftly pulls back, gradually expanding the view.
-                          Finally, from 2 to 3 seconds, it continues to gently
-                          move forward.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/7th.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          From 0 to 1.3 seconds, the camera rises steadily,
-                          showcasing the distant view. From 1.3 to 2 seconds, it
-                          slowly turns to the left. From 2 to 3 seconds, it
-                          rapidly slides to the right, transitioning the image.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td style="width: 23%; vertical-align: top" colspan="4">
-                    <div class="card">
-                      <video controls>
-                        <source src="resources/TTI/8th.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                      <div class="card-content">
-                        <p>
-                          From 0 to 1 second, the camera quickly moves forward.
-                          Then, it slowly rotates counterclockwise. After that,
-                          from 1.5 to 2.5 seconds, the camera quickly slides
-                          right and upward at a 45-degree angle.
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- 5. -->
-        <div
-          class="content is-centered has-text-centered"
-          style="display: block"
+              <p class="title is-6" style="text-align: center">Input 1</p>
+            </td>
+            <td
+              style="width: 23%; vertical-align: top; border-right-width: 1px"
+              colspan="4"
+            >
+              <p class="title is-6" style="text-align: center">Output 1</p>
+            </td>
+            <td
+              style="width: 23%; vertical-align: top; border-right-width: 1px"
+              colspan="4"
+            >
+              <p class="title is-6" style="text-align: center">Input 2</p>
+            </td>
+            <td style="width: 23%; vertical-align: top" colspan="4">
+              <p class="title is-6" style="text-align: center">Output 2</p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="width: 23%; vertical-align: top; border-right-width: 1px"
+              colspan="4"
+            >
+              <img
+                style="text-align: center; width: 100%; height: 100%;"
+                src="resources/trace_control/in1.webp"
+              />
+            </td>
+            <td
+              style="width: 23%; vertical-align: top; border-right-width: 1px"
+              colspan="4"
+            >
+              <video controls autoplay muted loop>
+                <source
+                  src="resources/trace_control/out1.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td
+              style="width: 23%; vertical-align: top; border-right-width: 1px"
+              colspan="4"
+            >
+              <img
+                style="text-align: center; width: 100%; height: 100%;"
+                src="resources/trace_control/in2.webp"
+              />
+            </td>
+            <td style="width: 23%; vertical-align: top" colspan="4">
+              <video controls autoplay muted loop>
+                <source
+                  src="resources/trace_control/out2.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video element.
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 23%; vertical-align: top" colspan="16">
+              <p style="text-align: center">
+                From 0 to 1 seconds, the camera rapidly descends. From 1 to 3
+                seconds, the camera slowly moves to the right.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 6. -->
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        OmniCam: <span style="color: #be9000;">Video(Trajectory)</span>+Image(Content)
+      </p>
+      <br />
+      <div class="card-content">
+        <table
+          align="top"
+          class="card-table is-centered is-bordered is-striped is-narrow"
+          style="border: none"
         >
-          <h3 class="title is-4">
-            Examples of Different Image of FlexCaM:
-            Text(Trajectory)+Image(Content)
-          </h3>
-          <div>
-            <div class="card" style="height: 240px">
-              <div class="card-content">
-                <table
-                  align="top"
-                  class="card-table is-centered is-bordered is-striped is-narrow"
-                  style="border: none"
+          <tbody>
+            <tr>
+              <td
+                style="width: 23%; vertical-align: top; border-right-width: 1px"
+                colspan="4"
+              >
+                <p class="title is-6" style="text-align: center">
+                  Video(Trajectory) 1
+                </p>
+              </td>
+
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <p class="title is-6" style="text-align: center">Output 1</p>
+              </td>
+              <td
+                style="width: 23%; vertical-align: top; border-right-width: 1px"
+                colspan="4"
+              >
+                <p class="title is-6" style="text-align: center">
+                  Video(Trajectory) 2
+                </p>
+              </td>
+
+              <td style="width: 23%; vertical-align: top" colspan="4">
+                <p class="title is-6" style="text-align: center">Output 2</p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  width: 23%;
+                  vertical-align: middle;
+                  border-right-width: 1px;
+                "
+                colspan="4"
+              >
+                <video
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  style="height: 128px; width: auto"
                 >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          width: 23%;
-                          vertical-align: top;
-                          border-right-width: 1px;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Input 1
-                        </p>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          vertical-align: top;
-                          border-right-width: 1px;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Output 1
-                        </p>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          vertical-align: top;
-                          border-right-width: 1px;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Input 2
-                        </p>
-                      </td>
-                      <td style="width: 23%; vertical-align: top" colspan="4">
-                        <p class="title is-6" style="text-align: center">
-                          Output 2
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="
-                          width: 23%;
-                          vertical-align: top;
-                          border-right-width: 1px;
-                        "
-                        colspan="4"
-                      >
-                        <img
-                          style="
-                            text-align: center;
-                            height: 122.26px;
-                            width: 100%;
-                          "
-                          src="resources/trace_control/in1.webp"
-                        />
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          vertical-align: top;
-                          border-right-width: 1px;
-                        "
-                        colspan="4"
-                      >
-                        <video controls>
-                          <source
-                            src="resources/trace_control/out1.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video element.
-                        </video>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          vertical-align: top;
-                          border-right-width: 1px;
-                        "
-                        colspan="4"
-                      >
-                        <img
-                          style="
-                            text-align: center;
-                            height: 122.26px;
-                            width: 100%;
-                          "
-                          src="resources/trace_control/in2.webp"
-                        />
-                      </td>
-                      <td style="width: 23%; vertical-align: top" colspan="4">
-                        <video controls>
-                          <source
-                            src="resources/trace_control/out2.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video element.
-                        </video>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="width: 23%; vertical-align: top" colspan="16">
-                        <p style="text-align: center">
-                          From 0 to 1 seconds, the camera rapidly descends. From
-                          1 to 3 seconds, the camera slowly moves to the right.
-                        </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- 6. -->
-        <div
-          class="content is-centered has-text-centered"
-          style="display: block"
-        >
-          <h3 class="title is-4">FlexCaM: Video(Trajectory)+Image(Content)</h3>
-          <div class="card" style="height: 210px">
-            <div class="card-content">
-              <table
-                align="top"
-                class="card-table is-centered is-bordered is-striped is-narrow"
-                style="border: none"
-              >
-                <tbody>
-                  <tr>
-                    <td
-                      style="
-                        width: 23%;
-                        vertical-align: top;
-                        border-right-width: 1px;
-                      "
-                      colspan="4"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Video(Trajectory)
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 23%;
-                        vertical-align: top;
-                        border-right-width: 1px;
-                      "
-                      colspan="4"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Image(Content)
-                      </p>
-                    </td>
-                    <td style="width: 23%; vertical-align: top" colspan="4">
-                      <p class="title is-6" style="text-align: center">
-                        Output
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="
-                        width: 23%;
-                        vertical-align: middle;
-                        border-right-width: 1px;
-                      "
-                      colspan="4"
-                    >
-                      <video controls style="height: 128px; width: auto">
-                        <source
-                          src="resources/trace&image/refer.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td
-                      style="
-                        width: 12%;
-                        vertical-align: middle;
-                        border-right-width: 1px;
-                      "
-                      colspan="4"
-                    >
-                      <img
-                        style="text-align: center; width: auto; height: 128px"
-                        src="resources/trace&image/in.jpg"
-                      />
-                    </td>
-                    <td style="width: 23%; vertical-align: middle" colspan="4">
-                      <video controls style="height: 128px; width: auto">
-                        <source
-                          src="resources/trace&image/out.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- 7. -->
-        <div
-          class="content is-centered has-text-centered"
-          style="display: block"
-        >
-          <h3 class="title is-4">FlexCaM: Text(Trajectory)+Video(Content)</h3>
-          <div>
-            <div class="card" style="height: 210px">
-              <div class="card-content">
-                <table
-                  align="top"
-                  class="card-table is-centered is-bordered is-striped is-narrow"
-                  style="border: none"
+                  <source
+                    src="resources/trace&image/refer.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video element.
+                </video>
+              </td>
+              <td style="width: 23%; vertical-align: middle" colspan="4">
+                <video
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  style="height: 128px; width: auto"
                 >
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          width: 23%;
-                          text-align: center;
-                          border-right-width: 1px;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Image(Content)
-                        </p>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          text-align: center;
-                          border-right-width: 1px;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Output
-                        </p>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          text-align: center;
-                          border-right-width: 1px;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Video(Content)
-                        </p>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          text-align: center;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <p class="title is-6" style="text-align: center">
-                          Output
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="
-                          width: 23%;
-                          border-right-width: 1px;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <img
-                          style="text-align: center; height: 126px; width: auto"
-                          src="resources/video_move/first_frame.jpg"
-                        />
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          border-right-width: 1px;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <video controls style="height: 128px; width: auto">
-                          <source
-                            src="resources/video_move/aa.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video element.
-                        </video>
-                      </td>
-                      <td
-                        style="
-                          width: 23%;
-                          border-right-width: 1px;
-                          vertical-align: middle;
-                        "
-                        colspan="4"
-                      >
-                        <video controls style="height: 128px; width: auto">
-                          <source
-                            src="resources/video_move/ac.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video element.
-                        </video>
-                      </td>
-                      <td
-                        style="width: 23%; vertical-align: middle"
-                        colspan="4"
-                      >
-                        <video controls style="height: 128px; width: auto">
-                          <source
-                            src="resources/video_move/ab.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video element.
-                        </video>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <p>
-              As the first framework achieving inter-video camera motion
-              transfer, our method ensures strict preservation of source motion
-              characteristics while generating geometrically consistent novel
-              perspectives.
-            </p>
-          </div>
-        </div>
+                  <source
+                    src="resources/trace&image/out.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video element.
+                </video>
+              </td>
+              <td
+                style="
+                  width: 23%;
+                  vertical-align: middle;
+                  border-right-width: 1px;
+                "
+                colspan="4"
+              >
+                <video
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  style="height: 128px; width: auto"
+                >
+                  <source
+                    src="resources/trace&image/new_add1.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video element.
+                </video>
+              </td>
+              <td style="width: 23%; vertical-align: middle" colspan="4">
+                <video
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  style="height: 128px; width: auto"
+                >
+                  <source
+                    src="resources/trace&image/new_add2.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video element.
+                </video>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </section>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- 8. -->
-        <div
-          class="content is-centered has-text-centered"
-          style="display: block"
-        >
-          <h3 class="title is-4">
-            Compare with other camera motion control models
-          </h3>
-          <div class="card is-centered has-text-centered" style="height: 210px">
-            <div class="card-content">
-              <table
-                align="top"
-                class="card-table is-centered is-bordered is-striped is-narrow"
-                style="border: none"
+    </div>
+    <!-- 7. -->
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        OmniCam: <span style="color: #be9000;">Text(Trajectory)</span>+Video(Content)
+      </p>
+      <br />
+      <table
+        align="top"
+        class="card-table is-centered is-bordered is-striped is-narrow"
+        style="border: none"
+      >
+        <tbody>
+          <tr>
+            <td
+              style="
+                width: 23%;
+                text-align: center;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="4"
+            >
+              <p class="title is-6" style="text-align: center">
+                Image(Content)
+              </p>
+            </td>
+            <td
+              style="
+                width: 23%;
+                text-align: center;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="4"
+            >
+              <p class="title is-6" style="text-align: center">Output</p>
+            </td>
+            <td
+              style="
+                width: 23%;
+                text-align: center;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="4"
+            >
+              <p class="title is-6" style="text-align: center">
+                Video(Content)
+              </p>
+            </td>
+            <td
+              style="width: 23%; text-align: center; vertical-align: middle"
+              colspan="4"
+            >
+              <p class="title is-6" style="text-align: center">Output</p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="
+                width: 23%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="4"
+            >
+              <img
+                style="text-align: center; height: 100%; width: 100%;"
+                src="resources/video_move/first_frame.jpg"
+              />
+            </td>
+            <td
+              style="
+                width: 23%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="4"
+            >
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
               >
-                <tbody>
-                  <tr>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Original image
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        CogVideoX
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Runway
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Tongyi
-                      </p>
-                    </td>
-                    <td style="width: 16%; vertical-align: top" colspan="3">
-                      <p class="title is-6" style="text-align: center">
-                        FlexCaM
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="
-                        width: 12%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <img
-                        style="text-align: center; height: 128px; width: auto"
-                        src="resources/pandas/panda-ori.jpg"
-                      />
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <video controls style="height: 128px; width: auto">
-                        <source
-                          src="resources/pandas/CogVideo.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <video controls style="height: 128px; width: auto">
-                        <source
-                          src="resources/pandas/Runway.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <video controls style="height: 128px; width: auto">
-                        <source
-                          src="resources/pandas/Tongyi.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td style="width: 16%; vertical-align: middle" colspan="3">
-                      <video controls style="height: 128px; width: auto">
-                        <source
-                          src="resources/trace&image/out.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div
-            class="card is-centered has-text-centered"
-            style="height: 175px; margin-top: 0.5rem"
-          >
-            <div class="card-content">
-              <table
-                align="top"
-                class="card-table is-centered is-bordered is-striped is-narrow"
-                style="border: none"
+                <source src="resources/video_move/aa.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td
+              style="
+                width: 23%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="4"
+            >
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
               >
-                <tbody>
-                  <tr>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Original image
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        CameraCtrl
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        MotionMaster
-                      </p>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: top;
-                      "
-                      colspan="3"
-                    >
-                      <p class="title is-6" style="text-align: center">
-                        Hunyuan
-                      </p>
-                    </td>
-                    <td style="width: 16%; vertical-align: top" colspan="3">
-                      <p class="title is-6" style="text-align: center">
-                        FlexCaM
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <img
-                        style="text-align: center; height: 93px; width: auto"
-                        src="resources/other_methods/ori.png"
-                      />
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <video controls style="width: auto">
-                        <source
-                          src="resources/other_methods/CameraCtrl.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        text-align: center;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <video
-                        controls
-                        style="height: 93px; width: auto; margin: auto"
-                      >
-                        <source
-                          src="resources/other_methods/CTl2.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td
-                      style="
-                        width: 16%;
-                        border-right-width: 1px;
-                        text-align: center;
-                        vertical-align: middle;
-                      "
-                      colspan="3"
-                    >
-                      <video controls style="width: auto">
-                        <source
-                          src="resources/other_methods/hunyuan.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                    <td style="width: 16%; vertical-align: middle" colspan="3">
-                      <video controls style="height: 93px; width: auto">
-                        <source src="resources/TTI/8th.mp4" type="video/mp4" />
-                        Your browser does not support the video element.
-                      </video>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <ul
+                <source src="resources/video_move/ac.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td style="width: 23%; vertical-align: middle" colspan="4">
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
+              >
+                <source src="resources/video_move/ab.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 8. -->
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+        Compare with other camera motion control models
+      </p>
+      <br />
+      <table
+        align="top"
+        class="card-table is-centered is-bordered is-striped is-narrow"
+        style="border: none"
+      >
+        <tbody>
+          <tr>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">
+                Original image
+              </p>
+            </td>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">CogVideoX</p>
+            </td>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">Runway</p>
+            </td>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">Tongyi</p>
+            </td>
+            <td style="width: 16%; vertical-align: top" colspan="3">
+              <p class="title is-6" style="text-align: center">OmniCam</p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="width: 12%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <img
+                style="text-align: center; height: 100%; width: 100%;"
+                src="resources/pandas/panda-ori.jpg"
+              />
+            </td>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
+              >
+                <source src="resources/pandas/CogVideo.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
+              >
+                <source src="resources/pandas/Runway.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
+              >
+                <source src="resources/pandas/Tongyi.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td style="width: 16%; vertical-align: middle" colspan="3">
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
+              >
+                <source src="resources/trace&image/out.mp4" type="video/mp4" />
+              </video>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table
+        align="top"
+        class="card-table is-centered is-bordered is-striped is-narrow"
+        style="border: none"
+      >
+        <tbody>
+          <tr>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">
+                Original image
+              </p>
+            </td>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">CameraCtrl</p>
+            </td>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">MotionMaster</p>
+            </td>
+            <td
+              style="width: 16%; border-right-width: 1px; vertical-align: top"
+              colspan="3"
+            >
+              <p class="title is-6" style="text-align: center">Hunyuan</p>
+            </td>
+            <td style="width: 16%; vertical-align: top" colspan="3">
+              <p class="title is-6" style="text-align: center">OmniCam</p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <img
+                style="text-align: center; height: 100%; width: 100%;"
+                src="resources/other_methods/ori.png"
+              />
+            </td>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <video controls autoplay muted loop style="height: 100%; width: 100%;">
+                <source
+                  src="resources/other_methods/CameraCtrl.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                text-align: center;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 100%; width: 100%;"
+              >
+                <source
+                  src="resources/other_methods/CTl2.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td
+              style="
+                width: 16%;
+                border-right-width: 1px;
+                text-align: center;
+                vertical-align: middle;
+              "
+              colspan="3"
+            >
+              <video controls autoplay muted loop style="height: 100%; width: 100%;">
+                <source
+                  src="resources/other_methods/hunyuan.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video element.
+              </video>
+            </td>
+            <td style="height: 100%; width: 100%; vertical-align: middle" colspan="3">
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                style="height: 93px; width: auto"
+              >
+                <source src="resources/TTI/8th.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <ul
             style="list-style-type: disc; padding-left: 20px; text-align: left"
           >
             <li>
@@ -970,7 +873,26 @@
               MotionMaster also supports only text as the content reference, and
               its camera motion control performance is unsatisfactory.
             </li>
-            <li>CameraCtrl supports only predefined trajectory control.</li>
+            <li>
+              CameraCtrl is a good work, trained on the RealEstate dataset,
+              which has inspired a lot of subsequent research. However, its
+              generalization is insufficient and we verified the code in its
+              official library. From our experimental results, selecting
+              existing camera trajectories from the RealEstate dataset works
+              well (the official inference code loads trajectories from the
+              RealEstate dataset). Probably because the RealEstate dataset
+              contains more camera forward effects, it works well forward and to
+              a small extent backward. But when we customize the trajectory,
+              e.g. “backward and right”, its spatial structure is destroyed, as
+              shown in the video. From a technical point of view, it is less
+              difficult to move the camera forward and to both sides at the same
+              time than to move directly to the right or backward. This is
+              because the input image itself contains information about the
+              complete picture, and by advancing forward and then moving to the
+              right, the process requires less unknown information to be added.
+              Nonetheless, this is still not a bad piece of work and we
+              appreciate its contribution to the community.
+            </li>
             <li>
               CogVideoX allows images as the content reference, but its ability
               to control camera motion remains inadequate.
@@ -980,33 +902,29 @@
               camera movement, it only supports simple camera operations.
             </li>
             <li>
-              FlexCaM demonstrates the effect of its handling of camera
+              OmniCam demonstrates the effect of its handling of camera
               rotational movement here.
             </li>
           </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <!-- 9. -->
-        <div
-          class="content is-centered has-text-centered"
-          style="display: block"
-        >
-          <h3 class="title is-4">
-            Camera Motion Controllable Text to Video via FlexCaM
-          </h3>
-          <div>
-            <table
+    </div>
+    <!-- 9. -->
+    <div class="content">
+      <p
+        style="text-align: center; font-size: 2em; font-weight: bold; line-height:1.2;"
+        class="sansserif"
+      >
+      Camera Motion Controllable Text to Video via OmniCam
+      </p>
+      <br />
+      <table
               align="top"
               class="card-table is-centered is-bordered is-striped"
             >
               <tbody>
                 <tr>
                   <td style="width: 23%; vertical-align: top">
-                    <div class="card">
-                      <video controls>
+                    <div class="card" style="height: 25em;">
+                      <video controls autoplay muted loop>
                         <source
                           src="resources/text_to_video/boat.mp4"
                           type="video/mp4"
@@ -1014,7 +932,7 @@
                         Your browser does not support the video element.
                       </video>
                       <div class="card-content">
-                        <p>
+                        <p style="font-size: 14px; margin:0; line-height:1.5;">
                           Generate an image of a small boat sailing on a lake,
                           from 0 to 1.3 seconds, the camera rises to show
                           distant views. From 1.3 to 2.1 seconds, the camera
@@ -1025,8 +943,8 @@
                     </div>
                   </td>
                   <td style="width: 23%; vertical-align: top">
-                    <div class="card">
-                      <video controls>
+                    <div class="card" style="height: 25em;">
+                      <video controls autoplay muted loop>
                         <source
                           src="resources/text_to_video/panda.mp4"
                           type="video/mp4"
@@ -1034,7 +952,7 @@
                         Your browser does not support the video element.
                       </video>
                       <div class="card-content">
-                        <p>
+                        <p style="font-size: 14px; margin:0; line-height:1.5;">
                           Generate an indoor image of a panda plush toy, from 0
                           to 1.3 seconds, the camera rises to show distant
                           views. From 1.3 to 2 seconds, the camera turns swiftly
@@ -1045,8 +963,8 @@
                     </div>
                   </td>
                   <td style="width: 23%; vertical-align: top">
-                    <div class="card">
-                      <video controls>
+                    <div class="card" style="height: 25em;">
+                      <video controls autoplay muted loop>
                         <source
                           src="resources/text_to_video/pot.mp4"
                           type="video/mp4"
@@ -1054,7 +972,7 @@
                         Your browser does not support the video element.
                       </video>
                       <div class="card-content">
-                        <p>
+                        <p style="font-size: 14px; margin:0; line-height:1.5;">
                           Generate an indoor image of a potted plant, from 0 to
                           1.3 seconds, the camera rises to show distant views.
                           From 1.3 to 2 seconds, the camera turns swiftly to the
@@ -1065,8 +983,8 @@
                     </div>
                   </td>
                   <td style="width: 23%; vertical-align: top">
-                    <div class="card">
-                      <video controls>
+                    <div class="card" style="height: 25em;">
+                      <video controls autoplay muted loop>
                         <source
                           src="resources/text_to_video/bamboo_panda.mp4"
                           type="video/mp4"
@@ -1074,7 +992,7 @@
                         Your browser does not support the video element.
                       </video>
                       <div class="card-content">
-                        <p>
+                        <p style="font-size: 14px; margin:0; line-height:1.5;">
                           Generate an image of a panda, from 0 to 1.3 seconds,
                           the camera rises to show distant views. From 1.3 to 2
                           seconds, the camera turns swiftly to the left. From 2
@@ -1086,9 +1004,33 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+    <div class="content" id="bibtex">
+      <p
+        style="text-align: left; font-size: 2em; font-weight: bold"
+        class="serif"
+      >
+        BibTeX
+      </p>
+      <code>
+        @misc{he2024cameractrl,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;title={CameraCtrl: Enabling Camera Control for
+        Text-to-Video Generation},<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;author={Hao He and Yinghao Xu and Yuwei Guo and
+        Gordon Wetzstein and Bo Dai and Hongsheng Li and Ceyuan Yang},<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;eprint={2404.02101},<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;archivePrefix={arXiv},<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;primaryClass={cs.CV}<br />
+        }
+      </code>
+    </div>
+
+    <div class="content">
+      <p style="font-size: 1.2em" class="serif">
+        We borrow the source code of this project page from
+        <a href="https://dreambooth.github.io/">DreamBooth</a>.
+      </p>
+    </div>
   </body>
 </html>
